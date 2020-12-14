@@ -19,13 +19,17 @@ class User extends CI_Controller {
         }
 
         $session_data = $this->session->userdata('logged_in');
-        $sesi['username'] = $session_data['username'];
-		$this->load->view('v_user',$sesi);
+		$sesi['username'] = $session_data['username'];
+		$sesi['konfigurasi'] = $this->Model_user->tampil_data()->result();
+		$this->load->view('v_user', $sesi);
 	}
-	function konfigurasi(){
-		$this->load->view('user/konfigurasi.php');
+	function konfigurasi($id){
+		$where = array('id_satker' => $id);
+		$data['konfigurasi'] = $this->Model_user->edit_data($where,'tb_user')->result();
+		$this->load->view('user/konfigurasi.php', $data);
 	}
-	function tambah(){
+	function update(){
+		$id_satker = $this->input->post('id_satker');
 		$nama_kabag = $this->input->post('nama_kabag');
 		$jabatan_kabag = $this->input->post('jabatan_kabag');
 		$nrp_kabag = $this->input->post('nrp_kabag');	
@@ -53,8 +57,10 @@ class User extends CI_Controller {
 			'jabatan_kepala' => $jabatan_kepala,
 			'nrp_kepala' => $nrp_kepala
 			);
-		$where = $this->db->where('username', $username);
-		$this->Model_user->input_data($data,'tb_user', $where);
+			$where = array(
+				'id_satker' => $id_satker
+			);	
+		$this->Model_user->update_data($where,$data,'tb_user');
 		redirect('user');
 	}
 

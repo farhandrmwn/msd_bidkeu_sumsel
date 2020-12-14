@@ -5,13 +5,17 @@
   <script src="<?php echo base_url()?>/assets/bootstrap/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+ <?php foreach ($konfigurasi as $p): ?>
 <div class="jumbotron text-center">
   <h1>Selamat Datang di Halaman User</h1>
     <p>Username : <?php echo $username; ?></p>
-    <a href="<?php echo base_url()?>/user/konfigurasi" class="btn btn-success" role="button">Konfigurasi</a>
-    <a href="<?php echo base_url()?>/personil/index" class="btn btn-primary" role="button">Personil Bermasalah
+    <a href="<?php echo base_url('user/konfigurasi/'.$p->id_satker)?>" class="btn btn-success" role="button">Konfigurasi</a>
+    <a href="<?php echo base_url()?>personil/index" class="btn btn-primary" role="button">Personil Bermasalah
+    </a>
+    <a href="<?php echo base_url()?>RD_polri/index" class="btn btn-primary" role="button">Rumah Dinas
     </a>
     <a href="<?php echo base_url()?>/login/logout_proses" class="btn btn-warning" role="button">Logout</a>
+<?php endforeach; ?>
 </div>
 
 </body>

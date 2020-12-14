@@ -10,8 +10,10 @@
         <h2>Konfigurasi</h2>
         </div>
         <div class="card-body">
-            <form method="post" action="<?php echo base_url()?>user/tambah">
+        <?php foreach($konfigurasi as $p){ ?>
+            <form method="post" action="<?php echo base_url()?>User/update">
             <div class="form-row">
+                    <input type="hidden" class="form-control" name="id_satker" value="<?php echo $p->id_satker ?>">
                 <div class="form-group col-md-4">
                     <label>Nama Kabag:</label>
                     <input type="text" class="form-control" name="nama_kabag">
@@ -68,9 +70,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit"  class="btn btn-primary"   name="tombol_login" value="Simpan">
+                <input type="submit"  class="btn btn-primary"   value="Simpan">
             </div>
             </form>
+        <?php } ?>
         </div>
         </div>
     </div>

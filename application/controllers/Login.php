@@ -9,6 +9,7 @@ class Login extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Model_login');
+        
     }
 
     // fungsi utama pada class login
