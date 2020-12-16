@@ -7,17 +7,18 @@ class User extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('Model_user');
 		$this->load->helper('url');
-	}
 
-	function index()
-	{
-        if(!$this->session->userdata('logged_in'))
+		if(!$this->session->userdata('logged_in'))
         {
             $pemberitahuan = "<div class='alert alert-warning'>Anda harus login dulu </div>";
             $this->session->set_flashdata('pemberitahuan', $pemberitahuan);
             redirect('login');
         }
 
+	}
+
+	function index()
+	{
         $session_data = $this->session->userdata('logged_in');
 		$sesi['username'] = $session_data['username'];
 		$sesi['konfigurasi'] = $this->Model_user->tampil_data()->result();
@@ -42,6 +43,10 @@ class User extends CI_Controller {
 		$nama_kepala = $this->input->post('nama_kepala');
 		$jabatan_kepala = $this->input->post('jabatan_kepala');
 		$nrp_kepala = $this->input->post('nrp_kepala');
+		$nama_keuangan = $this->input->post('nama_keuangan');
+		$jabatan_keuangan = $this->input->post('jabatan_keuangan');
+		$nrp_keuangan = $this->input->post('nrp_keuangan');
+		$alamat = $this->input->post('alamat');
  
 		$data = array(
 			'nama_kabag' => $nama_kabag,
@@ -55,7 +60,11 @@ class User extends CI_Controller {
 			'nrp_kasi' => $nrp_kasi,
 			'nama_kepala' => $nama_kepala,
 			'jabatan_kepala' => $jabatan_kepala,
-			'nrp_kepala' => $nrp_kepala
+			'nrp_kepala' => $nrp_kepala,
+			'nama_keuangan' => $nama_keuangan,
+			'jabatan_keuangan' => $jabatan_keuangan,
+			'nrp_keuangan' => $nrp_keuangan,
+			'alamat' => $alamat
 			);
 			$where = array(
 				'id_satker' => $id_satker

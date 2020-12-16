@@ -69,6 +69,27 @@
                     <input type="text" class="form-control" name="nrp_kepala">
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Nama Kepala Keuangan:</label>
+                    <input type="text" class="form-control" name="nama_keuangan">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Jabatan Kepala Keuangan:</label>
+                    <input type="text" class="form-control" name="jabatan_keuangan">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>NRP Kepala Keuangan:</label>
+                    <input type="text" class="form-control" name="nrp_keuangan">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Alamat:</label>
+                    <input type="text" class="form-control" name="alamat">
+                </div>
+            </div>
+            
             <div class="form-group">
                 <input type="submit"  class="btn btn-primary"   value="Simpan">
             </div>

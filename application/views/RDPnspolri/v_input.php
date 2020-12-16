@@ -10,44 +10,44 @@
         <h2>Tambah Data Personil</h2>
         </div>
         <div class="card-body">
-            <form method="post" action="<?php echo base_url()?>RD_polri/tambah_aksi">
+            <form method="post" action="<?php echo base_url()?>RD_pns_polri/tambah_aksi">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>SATKER:</label>
                     <input type="text" class="form-control" name="satker">
                 </div>
             </div>
-            <div class="card text-center card-header card text-white bg-secondary">PAMEN</div>
+            <div class="card text-center card-header card text-white bg-secondary">GOL-IV</div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>KUAT:</label>
-                    <input type="text" class="form-control" name="pamen_kuat" id="pmn_kuat">
+                    <input type="text" class="form-control" name="gol4_kuat" id="gol4_kuat">
                 </div>
                 <div class="form-group col-md-6">
                     <label>POT:</label>
-                    <input type="text" class="form-control" name="pamen_pot" id="pmn_pot">
+                    <input type="text" class="form-control" name="gol4_pot" id="gol4_pot">
                 </div>
             </div>
-            <div class="card text-center card-header card text-white bg-secondary">PAMA</div>
+            <div class="card text-center card-header card text-white bg-secondary">GOL-III</div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>KUAT:</label>
-                    <input type="text" class="form-control" name="pama_kuat" id="pm_kuat">
+                    <input type="text" class="form-control" name="gol3_kuat" id="gol3_kuat">
                 </div>
                 <div class="form-group col-md-6">
                     <label>POT:</label>
-                    <input type="text" class="form-control" name="pama_pot" id="pm_pot">
+                    <input type="text" class="form-control" name="gol3_pot" id="gol3_pot">
                 </div>
             </div>
-            <div class="card text-center card-header card text-white bg-secondary">BINTARA</div>
+            <div class="card text-center card-header card text-white bg-secondary">GOL-II</div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>KUAT:</label>
-                    <input type="text" class="form-control" name="bintara_kuat" id="bntr_kuat">
+                    <input type="text" class="form-control" name="gol2_kuat" id="gol2_kuat">
                 </div>
                 <div class="form-group col-md-6">
                     <label>POT:</label>
-                    <input type="text" class="form-control" name="bintara_pot" id="bntr_pot">
+                    <input type="text" class="form-control" name="gol2_pot" id="gol2_pot">
                 </div>
             </div>
             <div class="card text-center card-header card text-white bg-secondary">JUMLAH</div>
@@ -78,24 +78,24 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#pmn_kuat, #pm_kuat, #bntr_kuat").on('input',function() {
-            var pmn_kuat  = $("#pmn_kuat").val();
-            var pm_kuat = $("#pm_kuat").val();
-            var bntr_kuat = $("#bntr_kuat").val();
+        $("#gol4_kuat, #gol3_kuat, #gol2_kuat").on('input',function() {
+            var gol4_kuat  = $("#gol4_kuat").val();
+            var gol3_kuat = $("#gol3_kuat").val();
+            var gol2_kuat = $("#gol2_kuat").val();
 
-            var jml = parseInt(pmn_kuat) + parseInt(pm_kuat) + parseInt(bntr_kuat);
+            var jml = parseInt(gol4_kuat) + parseInt(gol3_kuat) + parseInt(gol2_kuat);
             $("#jml").val(jml);
         });
     });
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#pmn_pot, #pm_pot, #bntr_pot").on('input',function() {
-            var pmn_pot  = $("#pmn_pot").val();
-            var pm_pot = $("#pm_pot").val();
-            var bntr_pot = $("#bntr_pot").val();
+        $("#gol4_pot, #gol3_pot, #gol2_pot").on('input',function() {
+            var gol4_pot  = $("#gol4_pot").val();
+            var gol3_pot = $("#gol3_pot").val();
+            var gol2_pot = $("#gol2_pot").val();
 
-            var jml_pot = parseInt(pmn_pot) + parseInt(pm_pot) + parseInt(bntr_pot);
+            var jml_pot = parseInt(gol4_pot) + parseInt(gol3_pot) + parseInt(gol2_pot);
             $("#jml_pot").val(jml_pot);
         });
     });

@@ -12,7 +12,9 @@
     <a href="<?php echo base_url('user/konfigurasi/'.$p->id_satker)?>" class="btn btn-success" role="button">Konfigurasi</a>
     <a href="<?php echo base_url()?>personil/index" class="btn btn-primary" role="button">Personil Bermasalah
     </a>
-    <a href="<?php echo base_url()?>RD_polri/index" class="btn btn-primary" role="button">Rumah Dinas
+    <a href="<?php echo base_url()?>RD_polri/index" class="btn btn-primary" role="button">Rumah Dinas Polri
+    </a>
+    <a href="<?php echo base_url()?>RD_pns_polri/index" class="btn btn-primary" role="button">Rumah Dinas PNS
     </a>
     <a href="<?php echo base_url()?>/login/logout_proses" class="btn btn-warning" role="button">Logout</a>
 <?php endforeach; ?>

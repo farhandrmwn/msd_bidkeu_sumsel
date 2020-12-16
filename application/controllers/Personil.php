@@ -159,26 +159,32 @@ class Personil extends CI_Controller{
 		$u = $this->db->query('SELECT * FROM tb_user WHERE id_satker = '.$sess_data['id_satker'])->row();
 		// PHPExcel_Shared_Font::setAutoSizeMethod(PHPExcel_Shared_Font::AUTOSIZE_METHOD_EXACT);
 
-		// foreach(range('B','Q') as $columnID) {
-		//     $object->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
+		// foreach(range('A','R') as $columnID) {
+		//     $object->getActiveSheet()->getRowDimension($columnID)->setAutoSize(true);
 		// }
-		$object->getActiveSheet()->getColumnDimension('A')->setWidth(7);
+
+
+		$object->getActiveSheet()->getRowDimension('13')->setRowHeight(30);
+		$object->getActiveSheet()->getRowDimension('14')->setRowHeight(30);
+		$object->getActiveSheet()->getStyle('A11:R18')->getAlignment()->setWrapText(true); 
+
+		$object->getActiveSheet()->getColumnDimension('A')->setWidth(10);
 		$object->getActiveSheet()->getColumnDimension('B')->setWidth(70);
 		$object->getActiveSheet()->getColumnDimension('C')->setWidth(55);
-		$object->getActiveSheet()->getColumnDimension('D')->setWidth(100);
-		$object->getActiveSheet()->getColumnDimension('E')->setWidth(100);
+		$object->getActiveSheet()->getColumnDimension('D')->setWidth(75);
+		$object->getActiveSheet()->getColumnDimension('E')->setWidth(75);
 		$object->getActiveSheet()->getColumnDimension('F')->setWidth(50);
-		$object->getActiveSheet()->getColumnDimension('G')->setWidth(100);
-		$object->getActiveSheet()->getColumnDimension('H')->setWidth(80);
-		$object->getActiveSheet()->getColumnDimension('I')->setWidth(45);
-		$object->getActiveSheet()->getColumnDimension('J')->setWidth(50);
-		$object->getActiveSheet()->getColumnDimension('K')->setWidth(50);
-		$object->getActiveSheet()->getColumnDimension('L')->setWidth(80);
-		$object->getActiveSheet()->getColumnDimension('M')->setWidth(80);
-		$object->getActiveSheet()->getColumnDimension('N')->setWidth(80);
-		$object->getActiveSheet()->getColumnDimension('O')->setWidth(60);
-		$object->getActiveSheet()->getColumnDimension('P')->setWidth(60);
-		$object->getActiveSheet()->getColumnDimension('Q')->setWidth(60);
+		$object->getActiveSheet()->getColumnDimension('G')->setWidth(75);
+		$object->getActiveSheet()->getColumnDimension('H')->setWidth(75);
+		$object->getActiveSheet()->getColumnDimension('I')->setWidth(35);
+		$object->getActiveSheet()->getColumnDimension('J')->setWidth(35);
+		$object->getActiveSheet()->getColumnDimension('K')->setWidth(35);
+		$object->getActiveSheet()->getColumnDimension('L')->setWidth(75);
+		$object->getActiveSheet()->getColumnDimension('M')->setWidth(75);
+		$object->getActiveSheet()->getColumnDimension('N')->setWidth(75);
+		$object->getActiveSheet()->getColumnDimension('O')->setWidth(40);
+		$object->getActiveSheet()->getColumnDimension('P')->setWidth(40);
+		$object->getActiveSheet()->getColumnDimension('Q')->setWidth(40);
 		$object->getActiveSheet()->getColumnDimension('R')->setWidth(40);
 
 		$lastRow = 15+count($data['personil'])*2;
@@ -206,21 +212,20 @@ class Personil extends CI_Controller{
 		        'size'  => 36,
 		        'name' => 'Arial Narrow'
 		    ));
-	    $styleArray = array(
+	    $stylettd = array(
 		    'font'  => array(
 		        'bold' => true,
 		        'underline'  => true,
 		    ));
 
 	    $object->getActiveSheet()->getStyle('A1:R'.$lastRow)->applyFromArray($style);
-	    // $object->getActiveSheet()->getStyle('A1:R'.$lastRow)->applyFromArray($font);
 	    $object->getActiveSheet()->getStyle('H8')->applyFromArray($styleArray);
 	    $object->getActiveSheet()->getStyle('H9')->applyFromArray($styleArray);
 	    $object->getActiveSheet()->getStyle('A24:Q41')->applyFromArray($style);
-	    $object->getActiveSheet()->getStyle('C29')->applyFromArray($styleArray);
-	    $object->getActiveSheet()->getStyle('H29')->applyFromArray($styleArray);
-	    $object->getActiveSheet()->getStyle('Q29')->applyFromArray($styleArray);
-	    $object->getActiveSheet()->getStyle('H40')->applyFromArray($styleArray);
+	    $object->getActiveSheet()->getStyle('C29')->applyFromArray($stylettd);
+	    $object->getActiveSheet()->getStyle('H29')->applyFromArray($stylettd);
+	    $object->getActiveSheet()->getStyle('Q29')->applyFromArray($stylettd);
+	    $object->getActiveSheet()->getStyle('H40')->applyFromArray($stylettd);
 
 
 	    $object->getActiveSheet()->mergeCells('A1:C1');
@@ -310,24 +315,8 @@ class Personil extends CI_Controller{
 
 
 		foreach ($data['personil'] as $p){
-			// $object->getActiveSheet()->mergeCells('A'.$baris.':A'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('B'.$baris.':B'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('C'.$baris.':C'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('D'.$baris.':D'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('E'.$baris.':E'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('F'.$baris.':F'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('G'.$baris.':G'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('H'.$baris.':H'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('I'.$baris.':I'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('J'.$baris.':J'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('K'.$baris.':K'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('L'.$baris.':L'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('M'.$baris.':M'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('N'.$baris.':N'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('O'.$baris.':O'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('P'.$baris.':P'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('Q'.$baris.':Q'.$baris+$plus);
-			// $object->getActiveSheet()->mergeCells('R'.$baris.':R'.$baris+$plus);
+			$object->getActiveSheet()->getRowDimension($baris)->setRowHeight(35);
+			$object->getActiveSheet()->getRowDimension($baris+1)->setRowHeight(35);
 			$object->getActiveSheet()->mergeCells('A'.$baris.':A'.($baris+1));
 			$object->getActiveSheet()->mergeCells('B'.$baris.':B'.($baris+1));
 			$object->getActiveSheet()->mergeCells('C'.$baris.':C'.($baris+1));
