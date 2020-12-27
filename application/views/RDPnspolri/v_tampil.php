@@ -11,7 +11,6 @@
         </div>
         <div class="card-body">
             <a href="<?php echo base_url()?>RD_pns_polri/tambah" class="btn btn-primary" role="button">Tambah Data</a>
-            <a href="<?php echo base_url('RD_polri/excel'); ?>" class='btn btn-success'>Export Data</a>
             <div class="table-responsive text-nowrap">
                 <table class="table table-bordered text-center mt-4">
                   <thead>
